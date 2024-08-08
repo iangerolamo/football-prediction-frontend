@@ -20,37 +20,45 @@ select {
     min-width: 200px;
 }
 
-.custom-left1 {
-    width: 50px; /* Define uma largura fixa */
-    text-align: center;
-    box-sizing: border-box; /* Inclui o padding e a borda na largura total */
+.mat-checkbox {
+    margin: 0 10px; /* Adiciona margem para espaçamento da checkbox */
 }
 
-.custom-left2 {
-    width: 50px; /* Define uma largura fixa */
-    text-align: center;
-    box-sizing: border-box; /* Inclui o padding e a borda na largura total */
+.table-container table {
+    width: 100%;
+    table-layout: fixed; /* Mantém a largura das colunas fixa */
 }
 
-.custom-center {
-    width: 100px; /* Define uma largura fixa */
+.custom-left1, .custom-left2, .custom-center, .custom-right1, .custom-right2 {
+    width: auto; /* Permite que a largura se ajuste automaticamente */
     text-align: center;
-    box-sizing: border-box; /* Inclui o padding e a borda na largura total */
 }
 
-.custom-right1 {
-    width: 50px; /* Define uma largura fixa */
-    text-align: center;
-    box-sizing: border-box; /* Inclui o padding e a borda na largura total */
+@media (max-width: 768px) {
+    .select-container {
+        flex-direction: column; /* Em telas pequenas, coloca os selects em coluna */
+        align-items: stretch; /* Alinha os selects para preencher a largura disponível */
+    }
+
+    select {
+        margin: 10px 0; /* Adiciona margem vertical para espaçar os selects */
+        font-size: 14px; /* Ajusta o tamanho da fonte para telas menores */
+        width: 100%; /* Faz o select preencher a largura disponível */
+        max-width: none; /* Remove a largura máxima para telas menores */
+    }
+
+    .mat-checkbox {
+        margin-top: 10px; /* Adiciona margem acima da checkbox para espaçamento */
+    }
 }
 
-.custom-right2 {
-    width: 50px; /* Define uma largura fixa */
-    text-align: center;
-    box-sizing: border-box; /* Inclui o padding e a borda na largura total */
-}
+@media (max-width: 480px) {
+    .select-container {
+        margin: 10px; /* Reduz a margem para dispositivos muito pequenos */
+    }
 
-.mat-header-cell, .mat-cell {
-    padding: 0; /* Remove o padding padrão */
-    box-sizing: border-box; /* Inclui o padding e a borda na largura total */
-}      
+    select {
+        font-size: 12px; /* Ajusta o tamanho da fonte para telas muito pequenas */
+    }
+}
+      
