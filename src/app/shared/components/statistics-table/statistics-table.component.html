@@ -1,0 +1,65 @@
+<div class="table-container">
+  <div class="select-container">
+    <!-- Select para a esquerda -->
+    <select id="team1" (change)="onTeamSelectedLeft($event)">
+      <option *ngFor="let team of teams" [value]="team">{{ team }}</option>
+    </select>
+
+    <p>{{ selectedTeamPositionLeft ? selectedTeamPositionLeft + '°' : '' }}</p>
+
+      <mat-checkbox [formControl]="disableSelect" (change)="onCheckboxChange($event)">home/away</mat-checkbox>
+
+    <!-- Select para a direita -->
+    <p>{{ selectedTeamPositionRight ? selectedTeamPositionRight + '°' : '' }}</p>
+    <select id="team2" (change)="onTeamSelectedRight($event)">
+      <option *ngFor="let team of teams">{{ team }}</option>  
+    </select>
+
+    
+
+  </div>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- Left Columns -->
+    <ng-container matColumnDef="left1">
+      <th mat-header-cell *matHeaderCellDef class="custom-left1">%</th>
+      <td mat-cell *matCellDef="let element" class="custom-left1">
+        {{ element?.left2 || 0 }} %
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="left2">
+      <th mat-header-cell *matHeaderCellDef class="custom-left2"></th>
+      <td mat-cell *matCellDef="let element" class="custom-left2">
+        {{ element?.left1 || 0 }}
+      </td>
+    </ng-container>
+
+    <!-- Center Column -->
+    <ng-container matColumnDef="center">
+      <th mat-header-cell *matHeaderCellDef class="custom-center">Modality</th>
+      <td mat-cell *matCellDef="let element" class="custom-center">
+        {{ element.center }}
+      </td>
+    </ng-container>
+
+    <!-- Right Columns -->
+    <ng-container matColumnDef="right1">
+      <th mat-header-cell *matHeaderCellDef class="custom-right1"></th>
+      <td mat-cell *matCellDef="let element" class="custom-right1">
+        {{ element?.right1 || 0 }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="right2">
+      <th mat-header-cell *matHeaderCellDef class="custom-right2">%</th>
+      <td mat-cell *matCellDef="let element" class="custom-right2">
+        {{ element?.right2 || 0 }} %
+      </td>
+    </ng-container>
+
+    <!-- Header and Row Definitions -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>

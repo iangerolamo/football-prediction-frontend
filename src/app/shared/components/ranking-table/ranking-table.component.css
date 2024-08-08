@@ -1,0 +1,51 @@
+.table-container {
+    width: 100%; /* Define a largura desejada */
+    float: left; /* Alinha à esquerda */
+    margin-right: 10px; /* Espaçamento direita para separação */
+    overflow-x: auto; /* Adiciona scroll horizontal se necessário */
+}
+
+.custom-position {
+    width: 5px;
+}
+
+.custom-team {
+    width: 5px;
+}
+         
+.custom-points {
+    width: 5px;
+}
+
+.custom-games-played {
+    width: 5px;
+}
+
+.custom-wins {
+    width: 5px;
+}
+
+.custom-draws {
+    width: 5px;
+}
+
+.custom-losses {
+    width: 5px;
+}
+
+.custom-goals-for {
+    width: 5px;
+}
+
+.custom-goals-against {
+    width: 5px;
+}
+
+.custom-goal-difference {
+    width: 5px;
+}
+
+.custom-points-efficiency {
+    width: 5px;
+}
+

@@ -1,0 +1,61 @@
+<div class="table-container">
+    <table mat-table [dataSource]="rankingTeam" class="mat-elevation-z8">
+        <ng-container matColumnDef="position">
+            <th mat-header-cell *matHeaderCellDef class="custom-position"> # </th>  
+            <td mat-cell *matCellDef="let element" class="custom-position"> {{element.position}} </td>  
+        </ng-container>
+          
+        <ng-container matColumnDef="team">
+            <th mat-header-cell *matHeaderCellDef class="custom-team"> Team </th>
+            <td mat-cell *matCellDef="let element" class="custom-team"> {{element.teams}} </td>
+        </ng-container>     
+    
+        <ng-container matColumnDef="points">
+            <th mat-header-cell *matHeaderCellDef class="custom-points"> P </th>
+            <td mat-cell *matCellDef="let element" class="custom-points"> {{element.points}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="gamesPlayed">
+            <th mat-header-cell *matHeaderCellDef class="custom-games-played"> J </th>
+            <td mat-cell *matCellDef="let element" class="custom-games-played"> {{element.matchesPlayed}} </td>
+        </ng-container>
+         
+        <ng-container matColumnDef="wins">
+            <th mat-header-cell *matHeaderCellDef class="custom-wins"> V </th>
+            <td mat-cell *matCellDef="let element" class="custom-wins"> {{element.wins}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="draws">
+            <th mat-header-cell *matHeaderCellDef class="custom-draws"> E </th>
+            <td mat-cell *matCellDef="let element" class="custom-draws"> {{element.draws}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="losses">
+            <th mat-header-cell *matHeaderCellDef class="custom-losses"> D </th>
+            <td mat-cell *matCellDef="let element" class="custom-losses"> {{element.losses}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="goalsFor">
+            <th mat-header-cell *matHeaderCellDef class="custom-goals-for"> GP </th>
+            <td mat-cell *matCellDef="let element" class="custom-goals-for"> {{element.goalsScored}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="goalsAgainst">
+            <th mat-header-cell *matHeaderCellDef class="custom-goals-against"> GC </th>
+            <td mat-cell *matCellDef="let element" class="custom-goals-against"> {{element.goalsAgainst}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="goalDifference">
+            <th mat-header-cell *matHeaderCellDef class="custom-goal-difference"> SG </th>
+            <td mat-cell *matCellDef="let element" class="custom-goal-difference"> {{element.goalsDifference}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="pointsEfficiencyPercentage">
+            <th mat-header-cell *matHeaderCellDef class="custom-points-efficiency"> % </th>
+            <td mat-cell *matCellDef="let element" class="custom-points-efficiency"> {{element.pointsEfficiencyPercentage}} % </td>
+        </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { StatisticsService } from './service/statistics.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'football-prediction-frontend';
+
+  constructor(private statsService: StatisticsService) { }
+
 }
