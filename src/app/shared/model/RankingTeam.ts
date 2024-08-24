@@ -10,6 +10,5 @@ export interface RankingTeam {
     goalsDifference: number;
     lastFive: any[];
     pointsEfficiencyPercentage: string;
-
   }
   
