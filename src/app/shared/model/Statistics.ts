@@ -1,6 +1,13 @@
+
+export interface MatchResult {
+    result: string
+}
+
+
 export interface Statistics {
     id: number;
     wins: number;
+    lastFiveMatchByTeam: MatchResult[]; 
     winsPercentage: number;
     losses: number;
     lossesPercentage: number;
