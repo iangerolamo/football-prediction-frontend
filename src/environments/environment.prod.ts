@@ -1,5 +1,5 @@
 export const environment = {
     production: true,
-    baseUrl: 'https://football-prediction-backend.onrender.com'
+    baseUrl: 'http://3.19.242.216:8080'
   };
   
